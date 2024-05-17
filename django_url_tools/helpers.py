@@ -93,7 +93,7 @@ class UrlHelper(object):
 
     def toggle_params(self, **params):
         for param, value in params.items():
-            value = value.decode('utf-8')
+            value = str(value)
             if value in self.query_dict.getlist(param):
                 self.del_params(**{param: value})
             else:
